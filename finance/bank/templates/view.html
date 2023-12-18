@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+</head>
+<body>
+    <div class="list-group">
+
+        {% for bank in bank %}
+
+            {% if bank.name == 'АО "Kaspi Bank"' %}
+                <h3>{{bank.name}}</h3>
+                <img src="/media/images/Logo_of_Kaspi_bank.png" height="200" width="200">
+                {% for exec in executive %}
+                    {% if exec.fio == 'Михаил Ломтадзе' %}
+                    <img src="/media/images/Михаил_Ломтадзе2017_cropped.jpg" height="200" width="200">
+                    <h5>Имя: {{exec.fio}}</h5>
+                    <h5>ИИН: {{exec.iin}}</h5>
+                    <h5>Должность: {{exec.position}}</h5>
+                    <h5>Инфо: {{exec.contact}}</h5>
+
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+             {% if bank.name == 'АО "ForteBank"' %}
+                    <h3>{{bank.name}}</h3>
+                    <img src="/media/images/fortebank_300x140.png" height="200" width="300">
+                    {% for exec in executive %}
+                        {% if exec.fio == 'Бекжана Пирматов' %}
+                        <img src="/media/images/pirmatov.jpeg" height="200" width="200">
+                        <h5>Имя: {{exec.fio}}</h5>
+                        <h5>ИИН: {{exec.iin}}</h5>
+                        <h5>Должность: {{exec.position}}</h5>
+                        <h5>Инфо: {{exec.contact}}</h5>
+
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            {% if bank.name == 'АО "Bereke Bank"' %}
+                    <h3>{{bank.name}}</h3>
+                    <img src="/media/images/berekebank_logo.jpg" height="200" width="200">
+                    {% for exec in executive %}
+                        {% if exec.fio == 'Тимченко А. И.' %}
+                        <img src="/media/images/1668677221ogfhs_1000x768.jpg" height="200" width="300">
+                        <h5>Имя: {{exec.fio}}</h5>
+                        <h5>ИИН: {{exec.iin}}</h5>
+                        <h5>Должность: {{exec.position}}</h5>
+                        <h5>Инфо: {{exec.contact}}</h5>
+
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            {% if bank.name == 'АО "Altyn Bank"' %}
+                    <h3>{{bank.name}}</h3>
+                    <img src="/media/images/altyn-bank-2.jpg" height="200" width="200">
+                    {% for exec in executive %}
+                        {% if exec.fio == 'Альменов Марат Беркутбаевич' %}
+                        <img src="/media/images/photo_250371.jpg" height="200" width="300">
+                        <h5>Имя: {{exec.fio}}</h5>
+                        <h5>ИИН: {{exec.iin}}</h5>
+                        <h5>Должность: {{exec.position}}</h5>
+                        <h5>Инфо: {{exec.contact}}</h5>
+
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                <hr>
+
+        {% endfor %}
+    </div>
+</body>
+</html>
