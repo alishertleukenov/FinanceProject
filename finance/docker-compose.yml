@@ -10,12 +10,16 @@ services:
       - "8000:8000"
     depends_on:
       - db
+
   db:
     image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: alisher
+
   nginx:
     image: nginx:latest
     volumes:
@@ -25,3 +29,6 @@ services:
       - "80:80"
     depends_on:
       - web
+
+volumes:
+  postgres_data:
